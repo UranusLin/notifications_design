@@ -1,0 +1,54 @@
+# --- General ---
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.swp
+.env
+
+# --- Java & Kotlin (Gradle/Maven) ---
+/java/build/
+/java/.gradle/
+/java/out/
+/kotlin/build/
+/kotlin/.gradle/
+/kotlin/out/
+*.class
+*.jar
+*.war
+*.ear
+!gradle-wrapper.jar
+
+# --- Go ---
+/golang/bin/
+/golang/vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# --- TypeScript (Node.js) ---
+/typescript/node_modules/
+/typescript/dist/
+/typescript/coverage/
+/typescript/.nyc_output/
+/typescript/*.log
+/typescript/pids
+/typescript/*.pid
+/typescript/*.seed
+/typescript/*.pid.lock
+
+# --- Rust ---
+/rust/target/
+/rust/**/*.rs.bk
+debug/
+release/
+
+# --- Infrastructure ---
+/infra/postgres_data/
+/infra/redis_data/
+/infra/kafka_data/
+/infra/zookeeper_data/

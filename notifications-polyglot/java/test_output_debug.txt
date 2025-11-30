@@ -1,0 +1,63 @@
+> Task :compileJava
+> Task :processResources UP-TO-DATE
+> Task :classes
+
+> Task :compileTestJava
+Note: /Users/morrislin/Work/test/notifications_design/notifications-polyglot/java/src/test/java/com/example/notification/integration/NotificationIntegrationTest.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :test
+
+NotificationIntegrationTest > shouldProcessNotificationThroughWorker() FAILED
+    org.opentest4j.AssertionFailedError at NotificationIntegrationTest.java:115
+
+2025-11-30 00:52:28.700 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Revoke previously assigned partitions notifications-0
+2025-11-30 00:52:28.700 [kafka-1] INFO  o.s.k.l.KafkaMessageListenerContainer - notification-workers: partitions revoked: [notifications-0]
+2025-11-30 00:52:28.700 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-11-30 00:52:28.700 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Request joining group due to: consumer pro-actively leaving the group
+2025-11-30 00:52:28.700 [kafka-1] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Unsubscribed all topics or patterns and assigned partitions
+2025-11-30 00:52:28.701 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-11-30 00:52:28.701 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Request joining group due to: consumer pro-actively leaving the group
+2025-11-30 00:52:28.702 [kafka-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:52:28.702 [kafka-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62781) could not be established. Broker may not be available.
+2025-11-30 00:52:28.702 [kafka-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-11-30 00:52:28.702 [kafka-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-30 00:52:28.702 [kafka-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-11-30 00:52:28.703 [kafka-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-notification-workers-1 unregistered
+2025-11-30 00:52:28.704 [kafka-1] INFO  o.s.k.l.KafkaMessageListenerContainer - notification-workers: Consumer stopped
+2025-11-30 00:52:28.709 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-11-30 00:52:28.710 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-11-30 00:52:28.710 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-30 00:52:28.710 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-11-30 00:52:28.710 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2025-11-30 00:52:28.714 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-30 00:52:28.716 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-30 00:52:28.717 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+
+> Task :test FAILED
+
+2 tests completed, 1 failed
+
+[Incubating] Problems report is available at: file:///Users/morrislin/Work/test/notifications_design/notifications-polyglot/java/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///Users/morrislin/Work/test/notifications_design/notifications-polyglot/java/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 13s
+4 actionable tasks: 3 executed, 1 up-to-date

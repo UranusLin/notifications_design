@@ -1,0 +1,16 @@
+Design a service that dispatches notifications via multiple channels (email, SMS, push) to end users.
+Endpoints
+
+POST /notify — given a notification payload (channels, recipient IDs, message), enqueue for dispatch.
+GET /status/[notification_id] — return overall and per-channel delivery status.
+GET /metrics — return aggregated counts (sent, delivered, failed) over a time window.
+POST /webhook/callback — receive delivery receipts or failure reports from external providers.
+
+Key Constraints
+
+Multi-channel: support email, SMS, push; each channel has its own throughput, latency, and rate-limit characteristics.
+Multi-tenant: isolate data per client, enforce per-tenant quotas and rate limits.
+Scale: handle bursts up to 100k notifications per minute while maintaining low enqueue-to-dispatch latency.
+Reliability: at-least-once delivery with retry and backoff; ensure idempotent processing of retries and external callbacks.
+Observability: per-notification tracing, delivery error rates, end-to-end latency metrics; real-time dashboards and alerting.
+Extensibility: plugin-style adapters for future channels (voice, in-app) without core changes.

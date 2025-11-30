@@ -1,0 +1,1029 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources
+> Task :classes
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+
+> Task :test
+
+NotificationIntegrationTest STANDARD_OUT
+    00:53:25.988 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.notification.integration.NotificationIntegrationTest]: NotificationIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    00:53:26.026 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.notification.NotificationApplication for test class com.example.notification.integration.NotificationIntegrationTest
+    00:53:26.067 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+    00:53:26.068 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+    00:53:26.155 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+    00:53:26.250 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+    00:53:26.251 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+    00:53:26.263 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+      Server Version: 27.4.0
+      API Version: 1.47
+      Operating System: Docker Desktop
+      Total Memory: 31289 MB
+    00:53:26.285 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Creating container for image: testcontainers/ryuk:0.5.1
+    00:53:26.405 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+    00:53:26.456 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 is starting: b4329d9af914ed37d73488cd635bfc8474628fb2a63291584e5657b26feb3663
+    00:53:26.613 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 started in PT0.328196S
+    00:53:26.616 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+    00:53:26.617 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+    00:53:26.617 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+    00:53:26.617 [Test worker] INFO tc.confluentinc/cp-kafka:7.5.0 -- Creating container for image: confluentinc/cp-kafka:7.5.0
+    00:53:26.637 [Test worker] INFO tc.confluentinc/cp-kafka:7.5.0 -- Container confluentinc/cp-kafka:7.5.0 is starting: 9be1e033d58b84ecb591157d4a4ba3799f088aa84ef3c3c0b4166f72cecc985b
+    00:53:28.708 [Test worker] INFO tc.confluentinc/cp-kafka:7.5.0 -- Container confluentinc/cp-kafka:7.5.0 started in PT2.091099S
+    00:53:28.709 [Test worker] INFO tc.postgres:16-alpine -- Creating container for image: postgres:16-alpine
+    00:53:28.728 [Test worker] INFO tc.postgres:16-alpine -- Container postgres:16-alpine is starting: 7d526c09b90f7b2ba8a9922d269566eebef9825f62e706b8613cd0ac2872e5ab
+    00:53:29.429 [Test worker] INFO tc.postgres:16-alpine -- Container postgres:16-alpine started in PT0.719701S
+    00:53:29.429 [Test worker] INFO tc.postgres:16-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:62901/test?loggerLevel=OFF)
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+    [32m :: Spring Boot :: [39m              [2m (v3.2.0)[0;39m
+
+    2025-11-30 00:53:29.608 [Test worker] INFO  c.e.n.i.NotificationIntegrationTest - Starting NotificationIntegrationTest using Java 22.0.1 with PID 56786 (started by morrislin in /Users/morrislin/Work/test/notifications_design/notifications-polyglot/java)
+    2025-11-30 00:53:29.609 [Test worker] INFO  c.e.n.i.NotificationIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+    2025-11-30 00:53:29.957 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+    2025-11-30 00:53:29.977 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+    2025-11-30 00:53:30.317 [Test worker] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+    2025-11-30 00:53:30.322 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+    2025-11-30 00:53:30.322 [Test worker] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+    2025-11-30 00:53:30.323 [Test worker] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+    2025-11-30 00:53:30.352 [Test worker] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+    2025-11-30 00:53:30.353 [Test worker] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 737 ms
+    2025-11-30 00:53:30.493 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+    2025-11-30 00:53:30.511 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+    2025-11-30 00:53:30.524 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+    2025-11-30 00:53:30.608 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+    2025-11-30 00:53:30.618 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+    2025-11-30 00:53:30.705 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58922a00
+    2025-11-30 00:53:30.706 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+    2025-11-30 00:53:30.721 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+    2025-11-30 00:53:31.150 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+    2025-11-30 00:53:31.186 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+    2025-11-30 00:53:31.343 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+    2025-11-30 00:53:31.635 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+    2025-11-30 00:53:31.995 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+    2025-11-30 00:53:32.044 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+    2025-11-30 00:53:32.048 [Test worker] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 62912 (http) with context path ''
+    2025-11-30 00:53:32.064 [Test worker] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+    	allow.auto.create.topics = true
+    	auto.commit.interval.ms = 5000
+    	auto.include.jmx.reporter = true
+    	auto.offset.reset = earliest
+    	bootstrap.servers = [PLAINTEXT://localhost:62899]
+    	check.crcs = true
+    	client.dns.lookup = use_all_dns_ips
+    	client.id = consumer-notification-workers-1
+    	client.rack = 
+    	connections.max.idle.ms = 540000
+    	default.api.timeout.ms = 60000
+    	enable.auto.commit = false
+    	exclude.internal.topics = true
+    	fetch.max.bytes = 52428800
+    	fetch.max.wait.ms = 500
+    	fetch.min.bytes = 1
+    	group.id = notification-workers
+    	group.instance.id = null
+    	heartbeat.interval.ms = 3000
+    	interceptor.classes = []
+    	internal.leave.group.on.close = true
+    	internal.throw.on.fetch.stable.offset.unsupported = false
+    	isolation.level = read_uncommitted
+    	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+    	max.partition.fetch.bytes = 1048576
+    	max.poll.interval.ms = 300000
+    	max.poll.records = 500
+    	metadata.max.age.ms = 300000
+    	metric.reporters = []
+    	metrics.num.samples = 2
+    	metrics.recording.level = INFO
+    	metrics.sample.window.ms = 30000
+    	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+    	receive.buffer.bytes = 65536
+    	reconnect.backoff.max.ms = 1000
+    	reconnect.backoff.ms = 50
+    	request.timeout.ms = 30000
+    	retry.backoff.ms = 100
+    	sasl.client.callback.handler.class = null
+    	sasl.jaas.config = null
+    	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+    	sasl.kerberos.min.time.before.relogin = 60000
+    	sasl.kerberos.service.name = null
+    	sasl.kerberos.ticket.renew.jitter = 0.05
+    	sasl.kerberos.ticket.renew.window.factor = 0.8
+    	sasl.login.callback.handler.class = null
+    	sasl.login.class = null
+    	sasl.login.connect.timeout.ms = null
+    	sasl.login.read.timeout.ms = null
+    	sasl.login.refresh.buffer.seconds = 300
+    	sasl.login.refresh.min.period.seconds = 60
+    	sasl.login.refresh.window.factor = 0.8
+    	sasl.login.refresh.window.jitter = 0.05
+    	sasl.login.retry.backoff.max.ms = 10000
+    	sasl.login.retry.backoff.ms = 100
+    	sasl.mechanism = GSSAPI
+    	sasl.oauthbearer.clock.skew.seconds = 30
+    	sasl.oauthbearer.expected.audience = null
+    	sasl.oauthbearer.expected.issuer = null
+    	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+    	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+    	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+    	sasl.oauthbearer.jwks.endpoint.url = null
+    	sasl.oauthbearer.scope.claim.name = scope
+    	sasl.oauthbearer.sub.claim.name = sub
+    	sasl.oauthbearer.token.endpoint.url = null
+    	security.protocol = PLAINTEXT
+    	security.providers = null
+    	send.buffer.bytes = 131072
+    	session.timeout.ms = 45000
+    	socket.connection.setup.timeout.max.ms = 30000
+    	socket.connection.setup.timeout.ms = 10000
+    	ssl.cipher.suites = null
+    	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+    	ssl.endpoint.identification.algorithm = https
+    	ssl.engine.factory.class = null
+    	ssl.key.password = null
+    	ssl.keymanager.algorithm = SunX509
+    	ssl.keystore.certificate.chain = null
+    	ssl.keystore.key = null
+    	ssl.keystore.location = null
+    	ssl.keystore.password = null
+    	ssl.keystore.type = JKS
+    	ssl.protocol = TLSv1.3
+    	ssl.provider = null
+    	ssl.secure.random.implementation = null
+    	ssl.trustmanager.algorithm = PKIX
+    	ssl.truststore.certificates = null
+    	ssl.truststore.location = null
+    	ssl.truststore.password = null
+    	ssl.truststore.type = JKS
+    	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+    2025-11-30 00:53:32.128 [Test worker] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.6.0
+    2025-11-30 00:53:32.128 [Test worker] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 60e845626d8a465a
+    2025-11-30 00:53:32.128 [Test worker] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1764435212127
+    2025-11-30 00:53:32.132 [Test worker] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Subscribed to topic(s): notifications
+    2025-11-30 00:53:32.145 [Test worker] INFO  c.e.n.i.NotificationIntegrationTest - Started NotificationIntegrationTest in 2.703 seconds (process running for 6.557)
+
+NotificationIntegrationTest > shouldProcessNotificationThroughWorker() STANDARD_OUT
+    2025-11-30 00:53:32.293 [kafka-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Error while fetching metadata with correlation id 2 : {notifications=LEADER_NOT_AVAILABLE}
+    2025-11-30 00:53:32.294 [kafka-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Cluster ID: yPjATAB7TeiqJFwmepamrw
+
+NotificationIntegrationTest > shouldProcessNotificationThroughWorker() STANDARD_ERROR
+    WARNING: A Java agent has been loaded dynamically (/Users/morrislin/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+    WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+    WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+    WARNING: Dynamic loading of agents will be disallowed by default in a future release
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-11-30 00:53:33.426 [kafka-1] INFO  c.e.n.adapter.EmailAdapter - [Email] Sending to user456: Integration test message
+2025-11-30 00:53:33.435 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:33.436 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:33.463 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:33.463 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:33.536 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:33.536 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+Updating status for 3bf800d9-48eb-48ef-a6a9-6b13eb302b3b channel email to COMPLETED
+2025-11-30 00:53:33.631 [kafka-1] WARN  c.zaxxer.hikari.pool.ProxyConnection - HikariPool-1 - Connection org.postgresql.jdbc.PgConnection@58922a00 marked as broken because of SQLSTATE(08006), ErrorCode(0)
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:395)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:240)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:164)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:145)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:117)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:75)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:3673)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3662)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:591)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromCacheOrDatasource(DefaultLoadEventListener.java:577)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:547)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:531)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:206)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:286)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:241)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:110)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:67)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1234)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1222)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:209)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:112)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2430)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2401)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
+	at jdk.proxy3/jdk.proxy3.$Proxy175.find(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:313)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:249)
+	at jdk.proxy3/jdk.proxy3.$Proxy179.findById(Unknown Source)
+	at com.example.notification.service.NotificationStatusService.updateChannelStatus(NotificationStatusService.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.example.notification.service.NotificationStatusService$$SpringCGLIB$$0.updateChannelStatus(<generated>)
+	at com.example.notification.worker.NotificationWorker.listen(NotificationWorker.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:375)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2857)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2835)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$56(KafkaMessageListenerContainer.java:2753)
+	at io.micrometer.observation.Observation.observe(Observation.java:565)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2751)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2604)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2490)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2132)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1487)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1451)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1322)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+Caused by: java.io.EOFException: null
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:467)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	... 110 common frames omitted
+2025-11-30 00:53:33.632 [kafka-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08006
+2025-11-30 00:53:33.632 [kafka-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - An I/O error occurred while sending to the backend.
+2025-11-30 00:53:33.633 [kafka-1] INFO  o.h.e.i.DefaultLoadEventListener - HHH000327: Error performing load command
+org.hibernate.exception.JDBCConnectionException: JDBC exception executing SQL [select ns1_0.notification_id,cs1_0.notification_id,cs1_0.channel,cs1_0.status,ns1_0.created_at,ns1_0.status,ns1_0.updated_at from notification_status ns1_0 left join notification_channel_status cs1_0 on ns1_0.notification_id=cs1_0.notification_id where ns1_0.notification_id=?] [An I/O error occurred while sending to the backend.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:258)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:164)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:145)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:117)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:75)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:3673)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3662)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:591)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromCacheOrDatasource(DefaultLoadEventListener.java:577)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:547)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:531)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:206)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:286)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:241)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:110)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:67)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1234)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1222)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:209)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:112)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2430)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2401)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
+	at jdk.proxy3/jdk.proxy3.$Proxy175.find(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:313)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:249)
+	at jdk.proxy3/jdk.proxy3.$Proxy179.findById(Unknown Source)
+	at com.example.notification.service.NotificationStatusService.updateChannelStatus(NotificationStatusService.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.example.notification.service.NotificationStatusService$$SpringCGLIB$$0.updateChannelStatus(<generated>)
+	at com.example.notification.worker.NotificationWorker.listen(NotificationWorker.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:375)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2857)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2835)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$56(KafkaMessageListenerContainer.java:2753)
+	at io.micrometer.observation.Observation.observe(Observation.java:565)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2751)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2604)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2490)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2132)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1487)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1451)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1322)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+Caused by: org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:395)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:240)
+	... 103 common frames omitted
+Caused by: java.io.EOFException: null
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:467)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	... 110 common frames omitted
+2025-11-30 00:53:33.636 [kafka-1] ERROR o.s.t.i.TransactionInterceptor - Application exception overridden by rollback exception
+org.springframework.dao.DataAccessResourceFailureException: JDBC exception executing SQL [select ns1_0.notification_id,cs1_0.notification_id,cs1_0.channel,cs1_0.status,ns1_0.created_at,ns1_0.status,ns1_0.updated_at from notification_status ns1_0 left join notification_channel_status cs1_0 on ns1_0.notification_id=cs1_0.notification_id where ns1_0.notification_id=?] [An I/O error occurred while sending to the backend.] [n/a]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:274)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:249)
+	at jdk.proxy3/jdk.proxy3.$Proxy179.findById(Unknown Source)
+	at com.example.notification.service.NotificationStatusService.updateChannelStatus(NotificationStatusService.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.example.notification.service.NotificationStatusService$$SpringCGLIB$$0.updateChannelStatus(<generated>)
+	at com.example.notification.worker.NotificationWorker.listen(NotificationWorker.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:375)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2857)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2835)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$56(KafkaMessageListenerContainer.java:2753)
+	at io.micrometer.observation.Observation.observe(Observation.java:565)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2751)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2604)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2490)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2132)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1487)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1451)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1322)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+Caused by: org.hibernate.exception.JDBCConnectionException: JDBC exception executing SQL [select ns1_0.notification_id,cs1_0.notification_id,cs1_0.channel,cs1_0.status,ns1_0.created_at,ns1_0.status,ns1_0.updated_at from notification_status ns1_0 left join notification_channel_status cs1_0 on ns1_0.notification_id=cs1_0.notification_id where ns1_0.notification_id=?] [An I/O error occurred while sending to the backend.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:258)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:164)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:361)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:145)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:117)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:75)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:3673)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3662)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:591)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromCacheOrDatasource(DefaultLoadEventListener.java:577)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:547)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:531)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:206)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:286)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:241)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:110)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:67)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1234)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1222)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:209)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:112)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2430)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:2401)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
+	at jdk.proxy3/jdk.proxy3.$Proxy175.find(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:313)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 43 common frames omitted
+Caused by: org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:395)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:240)
+	... 103 common frames omitted
+Caused by: java.io.EOFException: null
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:467)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	... 110 common frames omitted
+2025-11-30 00:53:33.636 [kafka-1] ERROR c.e.n.worker.NotificationWorker - Failed to process channel email for notification [3bf800d9-48eb-48ef-a6a9-6b13eb302b3b]
+org.springframework.orm.jpa.JpaSystemException: Unable to rollback against JDBC Connection
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:341)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.JpaTransactionManager.doRollback(JpaTransactionManager.java:592)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:896)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:865)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.completeTransactionAfterThrowing(TransactionAspectSupport.java:687)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:389)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.example.notification.service.NotificationStatusService$$SpringCGLIB$$0.updateChannelStatus(<generated>)
+	at com.example.notification.worker.NotificationWorker.listen(NotificationWorker.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:375)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2857)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2835)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$56(KafkaMessageListenerContainer.java:2753)
+	at io.micrometer.observation.Observation.observe(Observation.java:565)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2751)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2604)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2490)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2132)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1487)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1451)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1322)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+Caused by: org.hibernate.TransactionException: Unable to rollback against JDBC Connection
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.rollback(AbstractLogicalConnectionImplementor.java:127)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.rollback(JdbcResourceLocalTransactionCoordinatorImpl.java:290)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.rollback(TransactionImpl.java:142)
+	at org.springframework.orm.jpa.JpaTransactionManager.doRollback(JpaTransactionManager.java:588)
+	... 31 common frames omitted
+Caused by: java.sql.SQLException: Connection is closed
+	at com.zaxxer.hikari.pool.ProxyConnection$ClosedConnection.lambda$getClosedConnection$0(ProxyConnection.java:502)
+	at jdk.proxy4/jdk.proxy4.$Proxy147.rollback(Unknown Source)
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:385)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java)
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.rollback(AbstractLogicalConnectionImplementor.java:121)
+	... 34 common frames omitted
+2025-11-30 00:53:33.636 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@377bead1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.637 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@20d2dc34 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.637 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1b8e7a0b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.637 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@38da373b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.637 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@509f7f93 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.637 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@669a3ac8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.638 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@28264837 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.638 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1dd7615d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.638 [kafka-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@bdfb6a7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-11-30 00:53:33.669 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:33.670 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:33.740 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:33.740 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:33.982 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:33.983 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:34.095 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:34.095 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+
+> Task :test
+
+NotificationIntegrationTest > shouldProcessNotificationThroughWorker() STANDARD_OUT
+    2025-11-30 00:53:32.400 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Discovered group coordinator localhost:62899 (id: 2147483646 rack: null)
+    2025-11-30 00:53:32.401 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] (Re-)joining group
+    2025-11-30 00:53:32.413 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Request joining group due to: need to re-join with the given member-id: consumer-notification-workers-1-f896cbc4-1180-420f-bfba-c8f902f9e4ae
+    2025-11-30 00:53:32.414 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+    2025-11-30 00:53:32.414 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] (Re-)joining group
+    2025-11-30 00:53:32.424 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notification-workers-1-f896cbc4-1180-420f-bfba-c8f902f9e4ae', protocol='range'}
+    2025-11-30 00:53:32.426 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Finished assignment for group at generation 1: {consumer-notification-workers-1-f896cbc4-1180-420f-bfba-c8f902f9e4ae=Assignment(partitions=[notifications-0])}
+    2025-11-30 00:53:32.447 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notification-workers-1-f896cbc4-1180-420f-bfba-c8f902f9e4ae', protocol='range'}
+    2025-11-30 00:53:32.448 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Notifying assignor about the new Assignment(partitions=[notifications-0])
+    2025-11-30 00:53:32.449 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Adding newly assigned partitions: notifications-0
+    2025-11-30 00:53:32.456 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Found no committed offset for partition notifications-0
+    2025-11-30 00:53:32.466 [kafka-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Resetting offset for partition notifications-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:62899 (id: 1 rack: null)], epoch=0}}.
+    2025-11-30 00:53:32.466 [kafka-1] INFO  o.s.k.l.KafkaMessageListenerContainer - notification-workers: partitions assigned: [notifications-0]
+    2025-11-30 00:53:32.506 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+    2025-11-30 00:53:32.507 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+    2025-11-30 00:53:32.507 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+    2025-11-30 00:53:32.535 [tomcat-handler-0] INFO  c.e.n.service.NotificationService - Enqueuing notification: 69b0991a-c926-4c89-8172-23ed98aa4d1a
+    2025-11-30 00:53:32.584 [tomcat-handler-0] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+    	acks = -1
+    	auto.include.jmx.reporter = true
+    	batch.size = 16384
+    	bootstrap.servers = [PLAINTEXT://localhost:62899]
+    	buffer.memory = 33554432
+    	client.dns.lookup = use_all_dns_ips
+    	client.id = producer-1
+    	compression.type = none
+    	connections.max.idle.ms = 540000
+    	delivery.timeout.ms = 120000
+    	enable.idempotence = true
+    	interceptor.classes = []
+    	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+    	linger.ms = 0
+    	max.block.ms = 60000
+    	max.in.flight.requests.per.connection = 5
+    	max.request.size = 1048576
+    	metadata.max.age.ms = 300000
+    	metadata.max.idle.ms = 300000
+    	metric.reporters = []
+    	metrics.num.samples = 2
+    	metrics.recording.level = INFO
+    	metrics.sample.window.ms = 30000
+    	partitioner.adaptive.partitioning.enable = true
+    	partitioner.availability.timeout.ms = 0
+    	partitioner.class = null
+    	partitioner.ignore.keys = false
+    	receive.buffer.bytes = 32768
+    	reconnect.backoff.max.ms = 1000
+    	reconnect.backoff.ms = 50
+    	request.timeout.ms = 30000
+    	retries = 2147483647
+    	retry.backoff.ms = 100
+    	sasl.client.callback.handler.class = null
+    	sasl.jaas.config = null
+    	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+    	sasl.kerberos.min.time.before.relogin = 60000
+    	sasl.kerberos.service.name = null
+    	sasl.kerberos.ticket.renew.jitter = 0.05
+    	sasl.kerberos.ticket.renew.window.factor = 0.8
+    	sasl.login.callback.handler.class = null
+    	sasl.login.class = null
+    	sasl.login.connect.timeout.ms = null
+    	sasl.login.read.timeout.ms = null
+    	sasl.login.refresh.buffer.seconds = 300
+    	sasl.login.refresh.min.period.seconds = 60
+    	sasl.login.refresh.window.factor = 0.8
+    	sasl.login.refresh.window.jitter = 0.05
+    	sasl.login.retry.backoff.max.ms = 10000
+    	sasl.login.retry.backoff.ms = 100
+    	sasl.mechanism = GSSAPI
+    	sasl.oauthbearer.clock.skew.seconds = 30
+    	sasl.oauthbearer.expected.audience = null
+    	sasl.oauthbearer.expected.issuer = null
+    	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+    	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+    	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+    	sasl.oauthbearer.jwks.endpoint.url = null
+    	sasl.oauthbearer.scope.claim.name = scope
+    	sasl.oauthbearer.sub.claim.name = sub
+    	sasl.oauthbearer.token.endpoint.url = null
+    	security.protocol = PLAINTEXT
+    	security.providers = null
+    	send.buffer.bytes = 131072
+    	socket.connection.setup.timeout.max.ms = 30000
+    	socket.connection.setup.timeout.ms = 10000
+    	ssl.cipher.suites = null
+    	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+    	ssl.endpoint.identification.algorithm = https
+    	ssl.engine.factory.class = null
+    	ssl.key.password = null
+    	ssl.keymanager.algorithm = SunX509
+    	ssl.keystore.certificate.chain = null
+    	ssl.keystore.key = null
+    	ssl.keystore.location = null
+    	ssl.keystore.password = null
+    	ssl.keystore.type = JKS
+    	ssl.protocol = TLSv1.3
+    	ssl.provider = null
+    	ssl.secure.random.implementation = null
+    	ssl.trustmanager.algorithm = PKIX
+    	ssl.truststore.certificates = null
+    	ssl.truststore.location = null
+    	ssl.truststore.password = null
+    	ssl.truststore.type = JKS
+    	transaction.timeout.ms = 60000
+    	transactional.id = null
+    	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+    2025-11-30 00:53:32.590 [tomcat-handler-0] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+    2025-11-30 00:53:32.596 [tomcat-handler-0] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.6.0
+    2025-11-30 00:53:32.596 [tomcat-handler-0] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 60e845626d8a465a
+    2025-11-30 00:53:32.596 [tomcat-handler-0] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1764435212596
+    2025-11-30 00:53:32.601 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: yPjATAB7TeiqJFwmepamrw
+    2025-11-30 00:53:32.611 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-1] ProducerId set to 0 with epoch 0
+    2025-11-30 00:53:32.638 [kafka-1] INFO  c.e.n.worker.NotificationWorker - Processing notification [69b0991a-c926-4c89-8172-23ed98aa4d1a]: sending to channels [push]
+    Updating status for 69b0991a-c926-4c89-8172-23ed98aa4d1a channel push to PROCESSING
+    New overall status for 69b0991a-c926-4c89-8172-23ed98aa4d1a: PROCESSING
+    2025-11-30 00:53:32.648 [kafka-1] INFO  c.e.notification.adapter.PushAdapter - [Push] Sending to device-token-123: Worker integration test
+    Updating status for 69b0991a-c926-4c89-8172-23ed98aa4d1a channel push to COMPLETED
+    New overall status for 69b0991a-c926-4c89-8172-23ed98aa4d1a: COMPLETED
+    2025-11-30 00:53:32.755 [kafka-1] INFO  c.e.n.worker.NotificationWorker - Notification [69b0991a-c926-4c89-8172-23ed98aa4d1a] processed successfully
+
+NotificationIntegrationTest > shouldProcessNotificationThroughWorker() PASSED
+
+NotificationIntegrationTest > shouldEnqueueNotificationSuccessfully() STANDARD_OUT
+    2025-11-30 00:53:33.205 [tomcat-handler-3] INFO  c.e.n.service.NotificationService - Enqueuing notification: 3bf800d9-48eb-48ef-a6a9-6b13eb302b3b
+
+NotificationIntegrationTest > shouldEnqueueNotificationSuccessfully() PASSED
+
+NotificationIntegrationTest STANDARD_OUT
+    2025-11-30 00:53:33.220 [kafka-1] INFO  c.e.n.worker.NotificationWorker - Processing notification [3bf800d9-48eb-48ef-a6a9-6b13eb302b3b]: sending to channels [email, sms]
+    Updating status for 3bf800d9-48eb-48ef-a6a9-6b13eb302b3b channel email to PROCESSING
+    New overall status for 3bf800d9-48eb-48ef-a6a9-6b13eb302b3b: PROCESSING
+    2025-11-30 00:53:33.226 [kafka-1] INFO  c.e.n.adapter.EmailAdapter - [Email] Sending to user123: Integration test message
+    2025-11-30 00:53:33.333 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node -1 disconnected.
+    2025-11-30 00:53:33.334 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+    2025-11-30 00:53:33.334 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Cancelled in-flight METADATA request with correlation id 6 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+    2025-11-30 00:53:33.355 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+    2025-11-30 00:53:33.355 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Cancelled in-flight FETCH request with correlation id 16 due to node 1 being disconnected (elapsed time since creation: 135ms, elapsed time since send: 135ms, request timeout: 30000ms)
+    2025-11-30 00:53:33.356 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node -1 disconnected.
+    2025-11-30 00:53:33.356 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 2147483646 disconnected.
+    2025-11-30 00:53:33.356 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Error sending fetch request (sessionId=1877489849, epoch=3) to node 1:
+    org.apache.kafka.common.errors.DisconnectException: null
+    2025-11-30 00:53:33.357 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Group coordinator localhost:62899 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+
+2025-11-30 00:53:34.607 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:34.608 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:34.860 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:34.860 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:35.335 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:35.335 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:35.882 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:35.882 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:36.475 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:36.476 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:36.696 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:36.697 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:37.513 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:37.514 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:37.920 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:37.921 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:38.453 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:38.453 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:39.145 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:39.146 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:39.388 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:39.389 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:40.218 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:40.219 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:40.542 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:40.543 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:41.184 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:41.184 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:41.582 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:41.582 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:42.406 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:42.406 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:42.826 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:42.827 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:43.427 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:43.429 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:43.867 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:43.867 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:44.446 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:44.446 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:45.008 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:45.008 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:45.614 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:45.614 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:46.153 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:46.153 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:46.581 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:46.581 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:47.300 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:47.300 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:47.497 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:47.497 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:48.544 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:48.546 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:48.564 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:48.565 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:49.579 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:49.579 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:49.631 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:49.632 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:50.511 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:50.511 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:50.803 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:50.803 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:51.861 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:51.861 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:51.874 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:51.874 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:52.684 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:52.684 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:53.106 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:53.107 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:53.752 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:53.753 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:54.248 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:54.248 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:54.616 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:54.616 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:55.498 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:55.499 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:55.636 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:55.636 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:56.431 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:56.431 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:56.805 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:56.805 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:57.261 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:57.261 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:57.926 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:57.926 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:58.192 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:58.193 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:58.792 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:58.793 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:59.435 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:53:59.435 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:53:59.964 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:53:59.964 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:00.365 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:54:00.365 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:01.040 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:54:01.041 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:01.509 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:54:01.509 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:02.161 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:54:02.161 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:02.751 [kafka-coordinator-heartbeat-thread | notification-workers] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:54:02.751 [kafka-coordinator-heartbeat-thread | notification-workers] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:03.026 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2025-11-30 00:54:03.026 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:03.428 [SpringApplicationShutdownHook] INFO  o.s.c.s.DefaultLifecycleProcessor - Failed to shut down 1 bean with phase value 2147483547 within timeout of 30000ms: [org.springframework.kafka.config.internalKafkaListenerEndpointRegistry]
+2025-11-30 00:54:03.433 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-11-30 00:54:03.435 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-11-30 00:54:03.435 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-30 00:54:03.435 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-11-30 00:54:03.435 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2025-11-30 00:54:03.439 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-30 00:54:03.441 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-30 00:54:03.642 [kafka-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2025-11-30 00:54:03.642 [kafka-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - HikariPool-1 - Connection is not available, request timed out after 30005ms.
+2025-11-30 00:54:03.643 [kafka-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Connection to localhost:62901 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025-11-30 00:54:03.659 [kafka-1] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Seeking to offset 1 for partition notifications-0
+2025-11-30 00:54:03.659 [kafka-1] ERROR o.s.k.l.KafkaMessageListenerContainer - Error handler threw an exception
+org.springframework.kafka.KafkaException: Seek to current after exception
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:208)
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:168)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2893)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$56(KafkaMessageListenerContainer.java:2764)
+	at io.micrometer.observation.Observation.observe(Observation.java:565)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2751)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2604)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2490)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2132)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1487)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1451)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1322)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.notification.worker.NotificationWorker.listen(org.apache.kafka.clients.consumer.ConsumerRecord<java.lang.String, com.example.notification.dto.NotificationRequest>)' threw exception
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2926)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2871)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2835)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$56(KafkaMessageListenerContainer.java:2753)
+	... 10 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:391)
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2857)
+Caused by: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:466)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:531)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:405)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:610)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.example.notification.service.NotificationStatusService$$SpringCGLIB$$0.updateChannelStatus(<generated>)
+	at com.example.notification.worker.NotificationWorker.listen(NotificationWorker.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:375)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2857)
+	... 12 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection [HikariPool-1 - Connection is not available, request timed out after 30005ms.] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:51)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:116)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:273)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.begin(LogicalConnectionManagedImpl.java:281)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.begin(JdbcResourceLocalTransactionCoordinatorImpl.java:232)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.begin(TransactionImpl.java:83)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:176)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	... 31 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30005ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	... 38 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:62901 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:733)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 14 common frames omitted
+2025-11-30 00:54:03.660 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Revoke previously assigned partitions notifications-0
+2025-11-30 00:54:03.660 [kafka-1] INFO  o.s.k.l.KafkaMessageListenerContainer - notification-workers: partitions revoked: [notifications-0]
+2025-11-30 00:54:03.660 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-11-30 00:54:03.660 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Request joining group due to: consumer pro-actively leaving the group
+2025-11-30 00:54:03.660 [kafka-1] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Unsubscribed all topics or patterns and assigned partitions
+2025-11-30 00:54:03.661 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-11-30 00:54:03.661 [kafka-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Request joining group due to: consumer pro-actively leaving the group
+2025-11-30 00:54:03.662 [kafka-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Node 1 disconnected.
+2025-11-30 00:54:03.662 [kafka-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-notification-workers-1, groupId=notification-workers] Connection to node 1 (localhost/127.0.0.1:62899) could not be established. Broker may not be available.
+2025-11-30 00:54:03.662 [kafka-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-11-30 00:54:03.662 [kafka-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-30 00:54:03.662 [kafka-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-11-30 00:54:03.663 [kafka-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-notification-workers-1 unregistered
+2025-11-30 00:54:03.664 [kafka-1] INFO  o.s.k.l.KafkaMessageListenerContainer - notification-workers: Consumer stopped
+2025-11-30 00:54:03.793 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+
+[Incubating] Problems report is available at: file:///Users/morrislin/Work/test/notifications_design/notifications-polyglot/java/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 39s
+4 actionable tasks: 2 executed, 2 up-to-date

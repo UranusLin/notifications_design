@@ -1,0 +1,87 @@
+name: Polyglot CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-java:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./notifications-polyglot/java
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew classes
+
+  build-kotlin:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./notifications-polyglot/kotlin
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew classes
+
+  build-go:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./notifications-polyglot/golang
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+    - name: Build
+      run: go build -v ./...
+
+  build-typescript:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./notifications-polyglot/typescript
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Install dependencies
+      run: npm ci
+    - name: Build
+      run: npm run build
+
+  build-rust:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./notifications-polyglot/rust
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+    - name: Check
+      run: cargo check --verbose
