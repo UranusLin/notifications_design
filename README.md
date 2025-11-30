@@ -83,7 +83,7 @@ graph TD
         KafkaHigh & KafkaNormal & KafkaLow -->|Consume| EmailWorkers[Email Worker Pool]
         KafkaHigh & KafkaNormal & KafkaLow -->|Consume| SMSWorkers[SMS Worker Pool]
         KafkaHigh & KafkaNormal & KafkaLow -->|Consume| PushWorkers[Push Worker Pool]
-      
+    
         EmailWorkers & SMSWorkers & PushWorkers -->|Idempotency| RedisCluster
         EmailWorkers & SMSWorkers & PushWorkers -->|Vendor Rate Limit| RedisCluster
     end
@@ -92,7 +92,7 @@ graph TD
         EmailWorkers -->|Circuit Breaker| EmailAdapter[Email Adapter<br/>Retry + Fallback]
         SMSWorkers -->|Circuit Breaker| SMSAdapter[SMS Adapter<br/>Retry + Fallback]
         PushWorkers -->|Circuit Breaker| PushAdapter[Push Adapter<br/>Retry + Fallback]
-      
+    
         EmailAdapter -->|Primary| SendGrid[SendGrid]
         EmailAdapter -.->|Fallback| SES[AWS SES]
         SMSAdapter -->|Primary| Twilio[Twilio]
@@ -130,38 +130,45 @@ graph TD
 #### 關鍵優化設計 (Key Optimizations)
 
 ##### 1. **寫入路徑優化 (Write Path Optimization)**
+
 - **去除同步 DB 寫入**: API 層只寫 Kafka，返回 202 Accepted，避免 DB 成為瓶頸
 - **專用 State Writer**: 異步消費 Kafka 並批量寫入 PostgreSQL，提升吞吐量
 - **冪等性保證**: 使用 Kafka offset + [Redis](https://redis.io/) 去重，確保 exactly-once semantics
 
 ##### 2. **優先級隊列 (Priority Queues)**
+
 - **High Priority**: OTP、安全警報（< 1s 延遲）
 - **Normal Priority**: 交易通知、訂單確認（< 5s 延遲）
 - **Low Priority**: 營銷郵件、推薦內容（< 30s 延遲）
 - **獨立擴縮容**: 各優先級 Worker 可根據隊列深度獨立擴展
 
 ##### 3. **渠道隔離 (Channel Isolation)**
+
 - **獨立 Worker Pool**: Email, SMS, Push 各自獨立部署
 - **故障隔離**: 單一渠道故障不影響其他渠道
 - **獨立限流**: 每個渠道有獨立的 Rate Limiter (Token Bucket)
 
 ##### 4. **熔斷與降級 (Circuit Breaker & Fallback)**
+
 - **Circuit Breaker**: 使用 [Hystrix](https://github.com/Netflix/Hystrix)/[Resilience4j](https://resilience4j.readme.io/) 模式，外部服務故障時自動熔斷
 - **多供應商 Fallback**: Email 主用 [SendGrid](https://sendgrid.com/)，故障時自動切換到 [AWS SES](https://aws.amazon.com/ses/)
 - **Graceful Degradation**: 熔斷時將訊息放入 DLQ，避免無限重試
 
 ##### 5. **失敗處理 (Failure Handling)**
+
 - **Exponential Backoff**: 重試間隔指數增長 (1s, 2s, 4s, 8s, 16s)
 - **Max Retry Limit**: 最多重試 5 次，超過後進入 DLQ
 - **Dead Letter Queue**: 失敗訊息進入 DLQ，由人工或自動化工具處理
 - **Alerting**: DLQ 深度超過閾值時觸發告警
 
 ##### 6. **讀寫分離 (CQRS Pattern)**
+
 - **Write Model**: API → Kafka → State Writer → PostgreSQL Master
 - **Read Model**: Query API → PostgreSQL Read Replicas + [OpenSearch](https://opensearch.org/)
 - **最終一致性**: 狀態更新有輕微延遲 (< 100ms)，但查詢性能極高
 
 ##### 7. **完整可觀測性 (Full Observability)**
+
 - **Distributed Tracing**: [Jaeger](https://www.jaegertracing.io/) 追蹤每個通知的完整生命週期
 - **Metrics**: [Prometheus](https://prometheus.io/) 收集 QPS, Latency, Error Rate, Queue Depth
 - **Dashboards**: [Grafana](https://grafana.com/) 提供實時監控與告警
@@ -169,13 +176,15 @@ graph TD
 - **Alerting**: 基於 Prometheus AlertManager 的多級告警
 
 ##### 8. **自動擴縮容 (Auto-scaling)**
+
 - **HPA (Horizontal Pod Autoscaler)**: 基於 CPU/Memory/Queue Depth 自動擴縮容
 - **Kafka Partition Scaling**: 根據流量動態調整 Partition 數量
 - **Database Connection Pooling**: 使用 [PgBouncer](https://www.pgbouncer.org/) 管理連接池
 
 ##### 9. **安全性增強 (Security Enhancements)**
+
 - **mTLS**: 服務間通訊使用雙向 TLS
-- **Secret Management**: 使用 [Vault](https://www.hashicorp.com/products/vault)/[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) 管理敏感信息
+- **Secret Management**: 使用 [Vault](https://www.hashicorp.com/products/vault)/[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) 管理敏感資訊
 - **API Rate Limiting**: 租戶級別的 Rate Limiting (Redis + Lua Script)
 - **Webhook Signature Verification**: 驗證外部供應商的 Webhook 簽名
 
@@ -196,22 +205,22 @@ graph TD
 | 語言                 | 框架                       | 併發模型                           | 適用場景                                 | 專案連結                                                           |
 | :------------------- | :------------------------- | :--------------------------------- | :--------------------------------------- | :----------------------------------------------------------------- |
 | **Java**       | **Spring Boot 3**    | **Virtual Threads (Loom)**   | 企業級核心業務、複雜邏輯、既有 Java 團隊 | [查看 Java 實作](./notifications-polyglot/java/README.md)             |
-| **Kotlin**     | **Spring Boot 3**    | **Coroutines**               | 追求開發效率與代碼簡潔性的 JVM 團隊      | [查看 Kotlin 實作](./notifications-polyglot/kotlin/README.md)         |
+| **Kotlin**     | **Spring Boot 3**    | **Coroutines**               | 追求開發效率與程式碼簡潔性的 JVM 團隊      | [查看 Kotlin 實作](./notifications-polyglot/kotlin/README.md)         |
 | **Go**         | **Gin**              | **Goroutines**               | 高吞吐量微服務、Sidecar、網關、K8s 組件  | [查看 Go 實作](./notifications-polyglot/golang/README.md)             |
 | **TypeScript** | **NestJS + Fastify** | **Event Loop (Async/Await)** | 前後端統一、I/O 密集型應用、快速迭代     | [查看 TypeScript 實作](./notifications-polyglot/typescript/README.md) |
-| **Rust**       | **Axum**             | **Tokio (Async)**            | 極致效能、內存安全、低延遲核心組件       | [查看 Rust 實作](./notifications-polyglot/rust/README.md)             |
+| **Rust**       | **Axum**             | **Tokio (Async)**            | 極致效能、記憶體安全、低延遲核心組件       | [查看 Rust 實作](./notifications-polyglot/rust/README.md)             |
 
 ### 3.2 各語言特色解法分析
 
 #### Java (Spring Boot 3 + Virtual Threads)
 
 * **特色**: 傳統 Java 併發依賴 OS 線程，成本高。Java 21 引入 **Virtual Threads**，讓 Thread 變得極其廉價。
-* **本專案解法**: 開啟 `spring.threads.virtual.enabled=true`，讓每個請求都在虛擬線程中運行。這使得同步風格的代碼（如 JDBC）也能擁有非阻塞 I/O 的吞吐量，無需切換到複雜的 Reactive Stack (WebFlux)。
+* **本專案解法**: 開啟 `spring.threads.virtual.enabled=true`，讓每個請求都在虛擬線程中運行。這使得同步風格的程式碼（如 JDBC）也能擁有非阻塞 I/O 的吞吐量，無需切換到複雜的 Reactive Stack (WebFlux)。
 
 #### Kotlin (Spring Boot 3 + Coroutines)
 
-* **特色**: **Coroutines** 提供了 "Structured Concurrency"，讓非同步代碼寫起來像同步代碼，且具備強大的 Scope 管理與異常處理。
-* **本專案解法**: 使用 `suspend` 函數貫穿 Controller 到 Service。利用 `CoroutineScope` 並行處理多渠道發送，代碼比 Java 更簡潔優雅。
+* **特色**: **Coroutines** 提供了 "Structured Concurrency"，讓非同步程式碼寫起來像同步程式碼，且具備強大的 Scope 管理與異常處理。
+* **本專案解法**: 使用 `suspend` 函數貫穿 Controller 到 Service。利用 `CoroutineScope` 並行處理多渠道發送，程式碼比 Java 更簡潔優雅。
 
 #### Go (Gin + Goroutines)
 
