@@ -69,7 +69,7 @@ docker compose down -v
 ### Kafka 連接失敗
 如果應用程式無法連接 Kafka，請確保：
 1. 容器已完全啟動 (`docker compose ps` 顯示 healthy)。
-2. 應用程式配置的 `KAFKA_BROKERS` 指向 `localhost:9092` (如果在宿主機運行) 或 `kafka:29092` (如果在 Docker 網絡內運行)。
+2. 應用程式配置的 `KAFKA_BROKERS` 指向 `localhost:9092` (如果在宿主機運行) 或 `kafka:29092` (如果在 Docker 網路內運行)。
 
 ### 資料庫連接被拒絕
 請檢查端口 5432 是否被其他本地 Postgres 實例佔用。如果是，請修改 `docker-compose.yml` 中的端口映射，例如 `"5433:5432"`，並相應更新應用程式配置。

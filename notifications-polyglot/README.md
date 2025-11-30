@@ -13,7 +13,7 @@
 [![CI](https://github.com/UranusLin/notifications_design/actions/workflows/ci.yml/badge.svg)](https://github.com/UranusLin/notifications_design/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
 
-本目錄包含了 **Polyglot Notification System** 的所有源代碼實作。
+本目錄包含了 **Polyglot Notification System** 的所有源程式碼實作。
 
 ## 📂 目錄結構
 
@@ -31,7 +31,7 @@
 ### 1. 多語言實作 (Polyglot)
 為了展示不同語言在微服務架構中的優勢，我們實作了五種版本的服務：
 - **Java ([Spring Boot](https://spring.io/projects/spring-boot))**: 企業級標準，利用 [Virtual Threads](https://openjdk.org/jeps/444) 提升 I/O 效能。
-- **Kotlin ([Spring Boot](https://spring.io/projects/spring-boot))**: 現代化 JVM 語言，利用 [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) 簡化非同步代碼。
+- **Kotlin ([Spring Boot](https://spring.io/projects/spring-boot))**: 現代化 JVM 語言，利用 [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) 簡化非同步程式碼。
 - **Go ([Gin](https://gin-gonic.com/))**: 高效能、低資源消耗，適合高併發場景。
 - **Rust ([Axum](https://github.com/tokio-rs/axum))**: 極致效能與記憶體安全，適合計算密集或對延遲極其敏感的組件。
 - **TypeScript ([NestJS](https://nestjs.com/))**: 快速開發，龐大的生態系統，適合全端團隊。
