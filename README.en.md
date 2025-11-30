@@ -11,7 +11,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 [![CI](https://github.com/UranusLin/notifications_design/actions/workflows/ci.yml/badge.svg)](https://github.com/UranusLin/notifications_design/actions)
-[![License](https://img.shields.io/github/license/UranusLin/notifications_design?style=flat-square)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
 
 This project is a reference implementation of a high-concurrency, multi-channel notification system, demonstrating best practices and design patterns for cloud-native microservice architectures across different programming languages (Java, Kotlin, Go, TypeScript, Rust).
 

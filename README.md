@@ -11,7 +11,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 [![CI](https://github.com/UranusLin/notifications_design/actions/workflows/ci.yml/badge.svg)](https://github.com/UranusLin/notifications_design/actions)
-[![License](https://img.shields.io/github/license/UranusLin/notifications_design?style=flat-square)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
 
 本專案是一個高併發、多渠道通知系統的參考實作，展示了在雲原生微服務架構下，不同程式語言（Java, Kotlin, Go, TypeScript, Rust）的最佳實踐與設計模式。
 
