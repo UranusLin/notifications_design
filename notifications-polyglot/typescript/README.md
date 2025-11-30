@@ -1,10 +1,16 @@
 # TypeScript Notification Service (NestJS + Fastify + TypeORM)
 
 ## 核心特色
-*   **NestJS**: 模組化架構，易於維護。
-*   **Fastify**: 高效能 HTTP 底層。
+*   **[NestJS](https://nestjs.com/)**: 模組化架構，易於維護。
+*   **[Fastify](https://fastify.dev/)**: 高效能 HTTP 底層。
 *   **Adapter Pattern**: 使用 NestJS Providers 實作的適配器模式。
-*   **TypeORM + PostgreSQL**: 使用 TypeORM 持久化通知狀態。
+*   **[TypeORM](https://typeorm.io/) + [PostgreSQL](https://www.postgresql.org/)**: 使用 TypeORM 持久化通知狀態。
+
+## 🛡️ 最佳實踐 (Best Practices)
+*   **Advanced Logging**: 使用 [Winston](https://github.com/winstonjs/winston) + `winston-daily-rotate-file`。
+    *   **Daily Rolling**: 日誌每天自動滾動，保留 14 天歷史。
+    *   **Error Separation**: 錯誤日誌獨立寫入 `logs/error-%DATE%.log`。
+*   **Global Exception Filter**: 統一處理異常，返回標準化錯誤響應。
 
 ## 架構設計
 *   **Module**: `ChannelModule` 封裝了所有渠道邏輯。

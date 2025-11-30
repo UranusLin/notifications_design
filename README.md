@@ -15,7 +15,7 @@
 * `POST /notify`: 接收通知請求（渠道、接收者、訊息），並排入發送隊列。
 * `GET /status/[notification_id]`: 查詢整體與各渠道的發送狀態。
 * `GET /metrics`: 獲取聚合的統計數據（發送數、成功數、失敗數）。
-* `POST /webhook/callback`: 接收外部供應商（如 SendGrid, Twilio）的回執報告。
+* `POST /webhook/callback`: 接收外部供應商（如 [SendGrid](https://sendgrid.com/), [Twilio](https://www.twilio.com/)）的回執報告。
 
 ### 1.3 關鍵約束 (Key Constraints)
 
@@ -119,7 +119,7 @@ graph TD
 ##### 1. **寫入路徑優化 (Write Path Optimization)**
 - **去除同步 DB 寫入**: API 層只寫 Kafka，返回 202 Accepted，避免 DB 成為瓶頸
 - **專用 State Writer**: 異步消費 Kafka 並批量寫入 PostgreSQL，提升吞吐量
-- **冪等性保證**: 使用 Kafka offset + Redis 去重，確保 exactly-once semantics
+- **冪等性保證**: 使用 Kafka offset + [Redis](https://redis.io/) 去重，確保 exactly-once semantics
 
 ##### 2. **優先級隊列 (Priority Queues)**
 - **High Priority**: OTP、安全警報（< 1s 延遲）
@@ -133,8 +133,8 @@ graph TD
 - **獨立限流**: 每個渠道有獨立的 Rate Limiter (Token Bucket)
 
 ##### 4. **熔斷與降級 (Circuit Breaker & Fallback)**
-- **Circuit Breaker**: 使用 Hystrix/Resilience4j 模式，外部服務故障時自動熔斷
-- **多供應商 Fallback**: Email 主用 SendGrid，故障時自動切換到 AWS SES
+- **Circuit Breaker**: 使用 [Hystrix](https://github.com/Netflix/Hystrix)/[Resilience4j](https://resilience4j.readme.io/) 模式，外部服務故障時自動熔斷
+- **多供應商 Fallback**: Email 主用 [SendGrid](https://sendgrid.com/)，故障時自動切換到 [AWS SES](https://aws.amazon.com/ses/)
 - **Graceful Degradation**: 熔斷時將訊息放入 DLQ，避免無限重試
 
 ##### 5. **失敗處理 (Failure Handling)**
@@ -145,24 +145,24 @@ graph TD
 
 ##### 6. **讀寫分離 (CQRS Pattern)**
 - **Write Model**: API → Kafka → State Writer → PostgreSQL Master
-- **Read Model**: Query API → PostgreSQL Read Replicas + OpenSearch
+- **Read Model**: Query API → PostgreSQL Read Replicas + [OpenSearch](https://opensearch.org/)
 - **最終一致性**: 狀態更新有輕微延遲 (< 100ms)，但查詢性能極高
 
 ##### 7. **完整可觀測性 (Full Observability)**
-- **Distributed Tracing**: Jaeger 追蹤每個通知的完整生命週期
-- **Metrics**: Prometheus 收集 QPS, Latency, Error Rate, Queue Depth
-- **Dashboards**: Grafana 提供實時監控與告警
-- **Logging**: ELK Stack 集中日誌，支援全文搜索與分析
+- **Distributed Tracing**: [Jaeger](https://www.jaegertracing.io/) 追蹤每個通知的完整生命週期
+- **Metrics**: [Prometheus](https://prometheus.io/) 收集 QPS, Latency, Error Rate, Queue Depth
+- **Dashboards**: [Grafana](https://grafana.com/) 提供實時監控與告警
+- **Logging**: [ELK Stack](https://www.elastic.co/what-is/elk-stack) 集中日誌，支援全文搜索與分析
 - **Alerting**: 基於 Prometheus AlertManager 的多級告警
 
 ##### 8. **自動擴縮容 (Auto-scaling)**
 - **HPA (Horizontal Pod Autoscaler)**: 基於 CPU/Memory/Queue Depth 自動擴縮容
 - **Kafka Partition Scaling**: 根據流量動態調整 Partition 數量
-- **Database Connection Pooling**: 使用 PgBouncer 管理連接池
+- **Database Connection Pooling**: 使用 [PgBouncer](https://www.pgbouncer.org/) 管理連接池
 
 ##### 9. **安全性增強 (Security Enhancements)**
 - **mTLS**: 服務間通訊使用雙向 TLS
-- **Secret Management**: 使用 Vault/AWS Secrets Manager 管理敏感信息
+- **Secret Management**: 使用 [Vault](https://www.hashicorp.com/products/vault)/[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) 管理敏感信息
 - **API Rate Limiting**: 租戶級別的 Rate Limiting (Redis + Lua Script)
 - **Webhook Signature Verification**: 驗證外部供應商的 Webhook 簽名
 
@@ -231,7 +231,7 @@ graph TD
 
 ```bash
 cd notifications-polyglot/infra
-docker-compose up -d
+docker compose up -d
 # 這將啟動 Kafka, Zookeeper, PostgreSQL, Redis
 ```
 

@@ -17,17 +17,17 @@
 
 ### 1. 多語言實作 (Polyglot)
 為了展示不同語言在微服務架構中的優勢，我們實作了五種版本的服務：
-- **Java (Spring Boot)**: 企業級標準，利用 Virtual Threads 提升 I/O 效能。
-- **Kotlin (Spring Boot)**: 現代化 JVM 語言，利用 Coroutines 簡化非同步代碼。
-- **Go (Gin)**: 高效能、低資源消耗，適合高併發場景。
-- **Rust (Axum)**: 極致效能與記憶體安全，適合計算密集或對延遲極其敏感的組件。
-- **TypeScript (NestJS)**: 快速開發，龐大的生態系統，適合全端團隊。
+- **Java ([Spring Boot](https://spring.io/projects/spring-boot))**: 企業級標準，利用 [Virtual Threads](https://openjdk.org/jeps/444) 提升 I/O 效能。
+- **Kotlin ([Spring Boot](https://spring.io/projects/spring-boot))**: 現代化 JVM 語言，利用 [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) 簡化非同步代碼。
+- **Go ([Gin](https://gin-gonic.com/))**: 高效能、低資源消耗，適合高併發場景。
+- **Rust ([Axum](https://github.com/tokio-rs/axum))**: 極致效能與記憶體安全，適合計算密集或對延遲極其敏感的組件。
+- **TypeScript ([NestJS](https://nestjs.com/))**: 快速開發，龐大的生態系統，適合全端團隊。
 
 ### 2. 核心組件
 - **API Layer**: 接收請求，進行初步驗證，快速回應 (Accepted 202)，並將任務推送到 Kafka。
-- **Message Queue (Kafka)**: 緩衝突發流量 (Bursts)，確保系統在高負載下的穩定性，並保證訊息的至少一次傳遞 (At-least-once delivery)。
+- **Message Queue ([Kafka](https://kafka.apache.org/))**: 緩衝突發流量 (Bursts)，確保系統在高負載下的穩定性，並保證訊息的至少一次傳遞 (At-least-once delivery)。
 - **Worker Layer**: 消費 Kafka 訊息，調用外部適配器發送通知。可獨立擴展以應對高吞吐量需求。
-- **Storage (PostgreSQL)**: 持久化通知狀態，支援事務性更新。
+- **Storage ([PostgreSQL](https://www.postgresql.org/))**: 持久化通知狀態，支援事務性更新。
 
 ### 3. 設計模式
 - **Adapter Pattern**: 定義統一的 `ChannelAdapter` 介面，使得新增渠道（如 Voice, In-app）無需修改核心邏輯，符合 **Open/Closed Principle**。
@@ -81,7 +81,7 @@
 ```bash
 # 1. 啟動基礎設施
 cd infra
-docker-compose up -d
+docker compose up -d
 
 # 2. 運行任一服務 (以 Go 為例)
 cd ../golang

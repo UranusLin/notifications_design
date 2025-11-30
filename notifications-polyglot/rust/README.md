@@ -3,7 +3,12 @@
 ## 核心特色
 *   **Performance**: 極致的運算效能與記憶體安全。
 *   **Adapter Pattern**: 使用 Trait Objects (`dyn ChannelAdapter`) 實現動態分派。
-*   **SQLx + PostgreSQL**: 使用 SQLx 異步持久化通知狀態。
+*   **[SQLx](https://github.com/launchbadge/sqlx) + [PostgreSQL](https://www.postgresql.org/)**: 使用 SQLx 異步持久化通知狀態。
+
+## 🛡️ 最佳實踐 (Best Practices)
+*   **Structured Logging**: 使用 [Tracing](https://github.com/tokio-rs/tracing) 生態系統。
+*   **Log Rotation**: 使用 `tracing-appender` 實現 Daily Rolling 日誌。
+*   **Non-blocking Logging**: 使用非阻塞 Writer 確保日誌記錄不影響主線程效能。
 
 ## 架構設計
 *   **API**: Axum Web Framework。

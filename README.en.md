@@ -15,7 +15,7 @@ Design and implement a notification delivery service that supports multiple chan
 * `POST /notify`: Accept notification requests (channels, recipients, message) and enqueue for delivery.
 * `GET /status/[notification_id]`: Query overall and per-channel delivery status.
 * `GET /metrics`: Retrieve aggregated statistics (sent count, success count, failure count).
-* `POST /webhook/callback`: Receive delivery receipts from external providers (e.g., SendGrid, Twilio).
+* `POST /webhook/callback`: Receive delivery receipts from external providers (e.g., [SendGrid](https://sendgrid.com/), [Twilio](https://www.twilio.com/)).
 
 ### 1.3 Key Constraints
 
@@ -119,7 +119,7 @@ graph TD
 ##### 1. **Write Path Optimization**
 - **Remove Synchronous DB Writes**: API layer only writes to Kafka, returns 202 Accepted, avoiding DB bottleneck
 - **Dedicated State Writer**: Asynchronously consumes Kafka and batch writes to PostgreSQL for higher throughput
-- **Idempotency Guarantee**: Uses Kafka offset + Redis deduplication for exactly-once semantics
+- **Idempotency Guarantee**: Uses Kafka offset + [Redis](https://redis.io/) deduplication for exactly-once semantics
 
 ##### 2. **Priority Queues**
 - **High Priority**: OTP, security alerts (< 1s latency)
@@ -133,8 +133,8 @@ graph TD
 - **Independent Rate Limiting**: Each channel has its own Rate Limiter (Token Bucket)
 
 ##### 4. **Circuit Breaker & Fallback**
-- **Circuit Breaker**: Uses Hystrix/Resilience4j pattern, auto-breaks when external services fail
-- **Multi-Provider Fallback**: Email uses SendGrid primarily, auto-switches to AWS SES on failure
+- **Circuit Breaker**: Uses [Hystrix](https://github.com/Netflix/Hystrix)/[Resilience4j](https://resilience4j.readme.io/) pattern, auto-breaks when external services fail
+- **Multi-Provider Fallback**: Email uses [SendGrid](https://sendgrid.com/) primarily, auto-switches to [AWS SES](https://aws.amazon.com/ses/) on failure
 - **Graceful Degradation**: Messages go to DLQ during circuit break, avoiding infinite retries
 
 ##### 5. **Failure Handling**
@@ -145,24 +145,24 @@ graph TD
 
 ##### 6. **CQRS Pattern**
 - **Write Model**: API → Kafka → State Writer → PostgreSQL Master
-- **Read Model**: Query API → PostgreSQL Read Replicas + OpenSearch
+- **Read Model**: Query API → PostgreSQL Read Replicas + [OpenSearch](https://opensearch.org/)
 - **Eventual Consistency**: State updates have slight delay (< 100ms) but query performance is excellent
 
 ##### 7. **Full Observability**
-- **Distributed Tracing**: Jaeger tracks complete lifecycle of each notification
-- **Metrics**: Prometheus collects QPS, Latency, Error Rate, Queue Depth
-- **Dashboards**: Grafana provides real-time monitoring and alerting
-- **Logging**: ELK Stack centralizes logs with full-text search and analysis
+- **Distributed Tracing**: [Jaeger](https://www.jaegertracing.io/) tracks complete lifecycle of each notification
+- **Metrics**: [Prometheus](https://prometheus.io/) collects QPS, Latency, Error Rate, Queue Depth
+- **Dashboards**: [Grafana](https://grafana.com/) provides real-time monitoring and alerting
+- **Logging**: [ELK Stack](https://www.elastic.co/what-is/elk-stack) centralizes logs with full-text search and analysis
 - **Alerting**: Multi-level alerting based on Prometheus AlertManager
 
 ##### 8. **Auto-scaling**
 - **HPA (Horizontal Pod Autoscaler)**: Auto-scales based on CPU/Memory/Queue Depth
 - **Kafka Partition Scaling**: Dynamically adjusts partition count based on traffic
-- **Database Connection Pooling**: Uses PgBouncer for connection pool management
+- **Database Connection Pooling**: Uses [PgBouncer](https://www.pgbouncer.org/) for connection pool management
 
 ##### 9. **Security Enhancements**
 - **mTLS**: Inter-service communication uses mutual TLS
-- **Secret Management**: Uses Vault/AWS Secrets Manager for sensitive data
+- **Secret Management**: Uses [Vault](https://www.hashicorp.com/products/vault)/[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) for sensitive data
 - **API Rate Limiting**: Tenant-level rate limiting (Redis + Lua Script)
 - **Webhook Signature Verification**: Verifies webhook signatures from external providers
 
@@ -182,11 +182,11 @@ This project provides complete implementations in 5 languages, showcasing each l
 
 | Language           | Framework                | Concurrency Model                  | Use Case                                      | Project Link                                                       |
 | :----------------- | :----------------------- | :--------------------------------- | :-------------------------------------------- | :----------------------------------------------------------------- |
-| **Java**       | **Spring Boot 3**    | **Virtual Threads (Loom)**   | Enterprise core business, complex logic       | [View Java Implementation](./notifications-polyglot/java/README.md)             |
-| **Kotlin**     | **Spring Boot 3**    | **Coroutines**               | JVM teams seeking developer efficiency        | [View Kotlin Implementation](./notifications-polyglot/kotlin/README.md)         |
-| **Go**         | **Gin**              | **Goroutines**               | High-throughput microservices, sidecars, K8s  | [View Go Implementation](./notifications-polyglot/golang/README.md)             |
-| **TypeScript** | **NestJS + Fastify** | **Event Loop (Async/Await)** | Full-stack JS, I/O-intensive apps             | [View TypeScript Implementation](./notifications-polyglot/typescript/README.md) |
-| **Rust**       | **Axum**             | **Tokio (Async)**            | Extreme performance, memory safety            | [View Rust Implementation](./notifications-polyglot/rust/README.md)             |
+| **Java**       | **[Spring Boot 3](https://spring.io/projects/spring-boot)**    | **[Virtual Threads (Loom)](https://openjdk.org/jeps/444)**   | Enterprise core business, complex logic       | [View Java Implementation](./notifications-polyglot/java/README.md)             |
+| **Kotlin**     | **[Spring Boot 3](https://spring.io/projects/spring-boot)**    | **[Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)**               | JVM teams seeking developer efficiency        | [View Kotlin Implementation](./notifications-polyglot/kotlin/README.md)         |
+| **Go**         | **[Gin](https://gin-gonic.com/)**              | **[Goroutines](https://go.dev/tour/concurrency/1)**               | High-throughput microservices, sidecars, K8s  | [View Go Implementation](./notifications-polyglot/golang/README.md)             |
+| **TypeScript** | **[NestJS](https://nestjs.com/) + [Fastify](https://fastify.dev/)** | **Event Loop (Async/Await)** | Full-stack JS, I/O-intensive apps             | [View TypeScript Implementation](./notifications-polyglot/typescript/README.md) |
+| **Rust**       | **[Axum](https://github.com/tokio-rs/axum)**             | **[Tokio (Async)](https://tokio.rs/)**            | Extreme performance, memory safety            | [View Rust Implementation](./notifications-polyglot/rust/README.md)             |
 
 ### 3.2 Language-Specific Solutions
 
@@ -194,16 +194,27 @@ This project provides complete implementations in 5 languages, showcasing each l
 
 * **Feature**: Traditional Java concurrency relies on OS threads (expensive). Java 21 introduces **Virtual Threads**, making threads extremely cheap.
 * **Our Solution**: Enable `spring.threads.virtual.enabled=true` to run each request in a virtual thread. This gives synchronous-style code (like JDBC) the throughput of non-blocking I/O without switching to the complex Reactive Stack (WebFlux).
+* **Best Practices**:
+  * **Spring AOP**: Implemented `LoggingAspect` to automatically log request/response details for all Controllers.
+  * **Advanced Logging**: Configured Logback for **Daily Rolling** (30 days retention) and **Error Log Separation** (errors written to `logs/error.log`).
 
 #### Kotlin (Spring Boot 3 + Coroutines)
 
 * **Feature**: **Coroutines** provide "Structured Concurrency," making async code look like sync code with powerful scope management and exception handling.
 * **Our Solution**: Use `suspend` functions throughout Controller to Service. Leverage `CoroutineScope` for parallel multi-channel processing with cleaner code than Java.
+* **Best Practices**:
+  * **Spring AOP**: Implemented `LoggingAspect` to automatically log request/response details.
+  * **Advanced Logging**: Configured Logback for **Daily Rolling** and **Error Log Separation**.
 
 #### Go (Gin + Goroutines)
 
 * **Feature**: **Goroutines** are Go's soul, with extremely low startup cost (KB-level). **Channels** provide safe communication.
 * **Our Solution**: Use Worker Pool pattern with fixed number of Goroutines consuming Kafka messages. Use `select` statement for timeout and graceful shutdown. Gin framework is ultra-lightweight for high-performance APIs.
+* **Best Practices**:
+  * **Structured Logging**: Implemented [Zap](https://github.com/uber-go/zap) for high-performance structured logging.
+  * **Log Rotation**: Integrated [Lumberjack](https://github.com/natefinch/lumberjack) for daily log rotation and retention.
+  * **Middleware**: Custom Gin middleware for request logging (Latency, Status, IP).
+  * **Error Separation**: Error logs are separately written to `logs/error.log`.
 
 #### TypeScript (NestJS + Fastify)
 
@@ -212,11 +223,17 @@ This project provides complete implementations in 5 languages, showcasing each l
   * **Architecture**: Use **NestJS** for strict modular architecture (Controller, Service, Module), avoiding common JS project chaos.
   * **Performance**: Switch to **Fastify** (replacing Express) for significantly better HTTP performance.
   * **Type Safety**: Full TypeScript DTOs and Decorators.
+* **Best Practices**:
+  * **Advanced Logging**: Uses [Winston](https://github.com/winstonjs/winston) with `winston-daily-rotate-file` for daily rotation and error separation.
+  * **Global Exception Filter**: Centralized exception handling for standardized error responses.
 
 #### Rust (Axum + Tokio)
 
 * **Feature**: **Zero-cost abstractions** and **Memory Safety** (no GC).
 * **Our Solution**: Use **Axum** (Tokio-based web framework). Leverage Rust's type system (e.g., `Result<T, E>`) to force handling all error cases. For CPU-intensive tasks (encryption, serialization) or ultra-low latency requirements, Rust is the best choice.
+* **Best Practices**:
+  * **Structured Logging**: Uses [Tracing](https://github.com/tokio-rs/tracing) ecosystem.
+  * **Log Rotation**: Implemented `tracing-appender` for non-blocking daily log rotation.
 
 ---
 
@@ -231,7 +248,7 @@ This project provides complete implementations in 5 languages, showcasing each l
 
 ```bash
 cd notifications-polyglot/infra
-docker-compose up -d
+docker compose up -d
 # This starts Kafka, Zookeeper, PostgreSQL, Redis
 ```
 

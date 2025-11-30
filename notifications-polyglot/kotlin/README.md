@@ -1,9 +1,16 @@
 # Kotlin Notification Service (Spring Boot 3 + Coroutines)
 
 ## 核心特色
-*   **Coroutines**: 使用 Kotlin Coroutines (`suspend` functions) 處理非同步邏輯。
+*   **[Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)**: 使用 Kotlin Coroutines (`suspend` functions) 處理非同步邏輯。
 *   **Adapter Pattern**: 結合 Coroutines 的適配器模式。
-*   **JPA + PostgreSQL**: 使用 JPA 持久化通知狀態。
+*   **[JPA](https://spring.io/projects/spring-data-jpa) + [PostgreSQL](https://www.postgresql.org/)**: 使用 JPA 持久化通知狀態。
+
+## 🛡️ 最佳實踐 (Best Practices)
+*   **Spring AOP**: 使用 AspectJ (`LoggingAspect`) 自動記錄所有 Controller 的請求參數與響應時間。
+*   **Advanced Logging**: 
+    *   使用 Logback 進行日誌管理。
+    *   **Daily Rolling**: 日誌每天自動滾動，保留 30 天歷史。
+    *   **Error Separation**: 錯誤日誌 (`ERROR` level) 獨立寫入 `logs/error.log`，方便排查。
 
 ## 架構設計
 *   **Controller**: 

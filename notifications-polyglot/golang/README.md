@@ -1,9 +1,15 @@
 # Go Notification Service (Gin + GORM)
 
 ## 核心特色
-*   **Goroutines**: 高效的併發處理。
+*   **[Goroutines](https://go.dev/tour/concurrency/1)**: 高效的併發處理。
 *   **Adapter Pattern**: 使用 Go Interface 實現的策略模式。
-*   **GORM + PostgreSQL**: 使用 GORM 持久化通知狀態。
+*   **[GORM](https://gorm.io/) + [PostgreSQL](https://www.postgresql.org/)**: 使用 GORM 持久化通知狀態。
+
+## 🛡️ 最佳實踐 (Best Practices)
+*   **Structured Logging**: 使用 [Zap](https://github.com/uber-go/zap) 實現高效能結構化日誌。
+*   **Log Rotation**: 使用 [Lumberjack](https://github.com/natefinch/lumberjack) 實現日誌滾動 (Daily Rolling, 30 days retention)。
+*   **Middleware**: 自定義 Gin Middleware 記錄請求詳情 (Latency, Status, Method)。
+*   **Error Separation**: 錯誤日誌獨立寫入 `logs/error.log`。
 
 ## 架構設計
 *   **API**: Gin 框架處理 HTTP 請求。

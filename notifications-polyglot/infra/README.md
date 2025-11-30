@@ -1,6 +1,6 @@
 # Infrastructure Services
 
-本目錄包含 **Polyglot Notification System** 所需的所有基礎設施服務，使用 Docker Compose 進行編排。
+本目錄包含 **Polyglot Notification System** 所需的所有基礎設施服務，使用 [Docker Compose](https://docs.docker.com/compose/) 進行編排。
 
 ## 服務列表
 
@@ -11,6 +11,7 @@
 - **預設帳密**: `user` / `password`
 - **資料庫**: `notifications`
 - **數據卷**: `postgres_data`
+- **更多資訊**: [PostgreSQL Official](https://www.postgresql.org/)
 
 ### 2. Kafka (`kafka` & `zookeeper`)
 - **用途**: 訊息隊列，用於解耦 API 層和 Worker 層，實現高吞吐量的異步通知發送。
@@ -19,38 +20,40 @@
   - Kafka: 9092 (外部訪問), 29092 (容器間通訊)
   - Zookeeper: 2181
 - **Topic**: `notification-requests`
+- **更多資訊**: [Apache Kafka](https://kafka.apache.org/)
 
 ### 3. Redis (`redis`)
 - **用途**: (可選) 用於快取、速率限制 (Rate Limiting) 和去重 (Deduplication)。
 - **版本**: 7-alpine
 - **端口**: 6379
 - **數據卷**: `redis_data`
+- **更多資訊**: [Redis](https://redis.io/)
 
 ## 快速開始
 
 ### 啟動所有服務
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ### 查看服務狀態
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 ### 查看日誌
 ```bash
-docker-compose logs -f
+docker compose logs -f
 ```
 
 ### 停止服務
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### 清除數據 (重置)
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 ## 連接資訊
@@ -65,7 +68,7 @@ docker-compose down -v
 
 ### Kafka 連接失敗
 如果應用程式無法連接 Kafka，請確保：
-1. 容器已完全啟動 (`docker-compose ps` 顯示 healthy)。
+1. 容器已完全啟動 (`docker compose ps` 顯示 healthy)。
 2. 應用程式配置的 `KAFKA_BROKERS` 指向 `localhost:9092` (如果在宿主機運行) 或 `kafka:29092` (如果在 Docker 網絡內運行)。
 
 ### 資料庫連接被拒絕
