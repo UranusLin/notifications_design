@@ -1,5 +1,18 @@
 # Polyglot Notification System Design
 
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+[![CI](https://github.com/UranusLin/notifications_design/actions/workflows/ci.yml/badge.svg)](https://github.com/UranusLin/notifications_design/actions)
+[![License](https://img.shields.io/github/license/UranusLin/notifications_design?style=flat-square)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
+
 This project is a reference implementation of a high-concurrency, multi-channel notification system, demonstrating best practices and design patterns for cloud-native microservice architectures across different programming languages (Java, Kotlin, Go, TypeScript, Rust).
 
 ## 1. Project Challenge & Requirements

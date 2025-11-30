@@ -1,6 +1,19 @@
 # Polyglot Notification System Design
 
-本專案是一個高併發、多渠道通知系統的參考實作，使用不同程式語言（Java, Kotlin, Go, TypeScript, Rust）在雲端微服務架構下的最佳實踐與設計模式。
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+[![CI](https://github.com/UranusLin/notifications_design/actions/workflows/ci.yml/badge.svg)](https://github.com/UranusLin/notifications_design/actions)
+[![License](https://img.shields.io/github/license/UranusLin/notifications_design?style=flat-square)](https://github.com/UranusLin/notifications_design/blob/main/LICENSE)
+
+本專案是一個高併發、多渠道通知系統的參考實作，展示了在雲原生微服務架構下，不同程式語言（Java, Kotlin, Go, TypeScript, Rust）的最佳實踐與設計模式。
 
 ## 1. 專案挑戰與需求 (The Challenge)
 
