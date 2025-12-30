@@ -15,13 +15,9 @@
 
 本專案是一個高併發、多渠道通知系統的參考實作，展示了在雲原生微服務架構下，不同程式語言（Java, Kotlin, Go, TypeScript, Rust）的最佳實踐與設計模式。
 
-## 1. 專案挑戰與需求 (The Challenge)
+## 1. 系統背景與核心目標
 
-本系統基於以下核心需求設計（源自 [`require.txt`](require.txt)）：
-
-### 1.1 目標 (Objective)
-
-設計並實作一個通知發送服務，支援多種渠道（Email, SMS, Push）並發送給終端用戶。
+本系統旨在解決高併發環境下的通知發送挑戰，支援 Email, SMS 與 Push 多種管道，並針對以下核心需求進行優化：
 
 ### 1.2 核心 API (Endpoints)
 
@@ -44,11 +40,11 @@
 
 ---
 
-## 2. 系統架構設計 (System Architecture)
+## 2. 系統架構演進 (Architecture Evolution)
 
-本專案展示了從「可攜式參考實作」到「生產級雲原生架構」的演進。
+本專案展示了從「輕量化參考實作」到「生產級雲原生架構」的設計思路。
 
-### 2.1 目前實作架構 (Current Implementation - Portable)
+### 2.1 基礎架構 (Core Implementation)
 
 為了方便演示與本地開發 (Docker Compose)，目前採用簡化架構：
 

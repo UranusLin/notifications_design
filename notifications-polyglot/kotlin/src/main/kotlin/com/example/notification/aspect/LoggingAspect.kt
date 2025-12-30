@@ -13,14 +13,16 @@ class LoggingAspect {
 
     @Around("execution(* com.example.notification.controller..*(..))")
     fun logAround(joinPoint: ProceedingJoinPoint): Any? {
+        val methodName = joinPoint.signature.name
         val start = System.currentTimeMillis()
-        try {
+        
+        return try {
             val result = joinPoint.proceed()
-            val executionTime = System.currentTimeMillis() - start
-            logger.info("${joinPoint.signature.declaringTypeName}.${joinPoint.signature.name} executed in $executionTime ms")
-            return result
-        } catch (e: Throwable) {
-            logger.error("${joinPoint.signature.declaringTypeName}.${joinPoint.signature.name} failed: ${e.message}")
+            val duration = System.currentTimeMillis() - start
+            logger.debug("Request processed: {} ({}ms)", methodName, duration)
+            result
+        } catch (e: Exception) {
+            logger.error("Request failed: {} - {}", methodName, e.message)
             throw e
         }
     }

@@ -23,7 +23,6 @@ async fn main() -> anyhow::Result<()> {
         .with(tracing_subscriber::fmt::layer().with_writer(non_blocking))
         .init();
 
-    // Initialize Database
     let database_url = std::env::var("DATABASE_URL")
         .unwrap_or_else(|_| "postgres://postgres:postgres@localhost:5432/notification_db".to_string());
     
@@ -47,21 +46,21 @@ async fn main() -> anyhow::Result<()> {
     .execute(&pool)
     .await?;
 
-    tracing::info!("Database initialized");
+    tracing::debug!("Migrations completed");
 
-    // Initialize Services
-    let notification_service = Arc::new(service::NotificationService::new("localhost:9092").await?);
+    let kafka_brokers = std::env::var("KAFKA_BROKERS").unwrap_or_else(|_| "localhost:9092".to_string());
+
+    let notification_service = Arc::new(service::NotificationService::new(&kafka_brokers).await?);
     let status_service = Arc::new(status_service::NotificationStatusService::new(pool));
 
-    // Start Worker (Consumer) in background
     let worker_status_service = status_service.clone();
+    let worker_brokers = kafka_brokers.clone();
     tokio::spawn(async move {
-        if let Err(e) = worker::run_worker("localhost:9092", "notification-workers-rust", worker_status_service).await {
-            tracing::error!("Worker failed: {:?}", e);
+        if let Err(e) = worker::run_worker(&worker_brokers, "notification-workers-rust", worker_status_service).await {
+            tracing::error!("Worker failure: {:?}", e);
         }
     });
 
-    // Start API Server
     let app_state = api::AppState {
         notification_service,
         status_service,

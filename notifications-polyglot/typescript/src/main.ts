@@ -20,7 +20,6 @@ async function bootstrap() {
 
     app.useGlobalFilters(new GlobalExceptionFilter());
 
-    // Swagger Setup
     const config = new DocumentBuilder()
         .setTitle('Notification Service')
         .setDescription('The notification service API description')
@@ -29,12 +28,13 @@ async function bootstrap() {
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api', app, document);
 
-    // Start Kafka Consumer
+    const kafkaBrokers = process.env.KAFKA_BROKERS?.split(',') || ['localhost:9092'];
+
     app.connectMicroservice<MicroserviceOptions>({
         transport: Transport.KAFKA,
         options: {
             client: {
-                brokers: ['localhost:9092'],
+                brokers: kafkaBrokers,
             },
             consumer: {
                 groupId: 'notification-workers-ts',

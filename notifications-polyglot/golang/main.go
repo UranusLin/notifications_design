@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/example/notification-service-go/api"
 	"github.com/example/notification-service-go/pkg/logger"
 	"github.com/example/notification-service-go/pkg/middleware"
@@ -13,34 +15,36 @@ import (
 )
 
 func main() {
-	// Initialize Logger
 	logger.Init()
 	defer logger.Log.Sync()
 
-	// Initialize Database
-	dsn := "host=localhost user=postgres password=postgres dbname=notification_db port=5432 sslmode=disable"
+	dsn := os.Getenv("DATABASE_URL")
+	if dsn == "" {
+		dsn = "host=localhost user=postgres password=postgres dbname=notification_db port=5432 sslmode=disable"
+	}
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		logger.Log.Fatal("Failed to connect to database", zap.Error(err))
 	}
 
-	// Migrate the schema
 	db.AutoMigrate(&service.NotificationStatus{})
 
-	// Initialize Services
+	kafkaBrokers := []string{os.Getenv("KAFKA_BROKERS")}
+	if kafkaBrokers[0] == "" {
+		kafkaBrokers = []string{"localhost:9092"}
+	}
+
 	statusSvc := service.NewNotificationStatusService(db)
-	svc, err := service.NewNotificationService([]string{"localhost:9092"}, statusSvc)
+	svc, err := service.NewNotificationService(kafkaBrokers, statusSvc)
 	if err != nil {
 		logger.Log.Fatal("Failed to create service", zap.Error(err))
 	}
 	defer svc.Close()
 
-	// Start Worker (Consumer) in a goroutine
-	w := worker.NewNotificationWorker([]string{"localhost:9092"}, "notification-workers-go", statusSvc)
+	w := worker.NewNotificationWorker(kafkaBrokers, "notification-workers-go", statusSvc)
 	go w.Start()
 
-	// Initialize API Server
-	r := gin.New() // Use New() instead of Default() to skip default logger
+	r := gin.New()
 	r.Use(gin.Recovery())
 	r.Use(middleware.Logger())
 
